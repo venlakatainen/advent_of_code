@@ -24,6 +24,10 @@ def readfile():
             
 
     biggest = max(sum)
+    reverse = sorted(sum, reverse=True)
+    topthree = reverse[0] + reverse[1] + reverse[2]
+
+    print(topthree)
     print(biggest)
     
 

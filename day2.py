@@ -19,7 +19,7 @@ def readfile():
     # Y = paper
     # Z = scissors
     me = 0
-
+    total = 0
     for j in range(0, length):
         if game[j][1] == "X":    # rock
             me += 1
@@ -54,7 +54,52 @@ def readfile():
             elif game[j][0] == "C": # Scissors (draw)
                 me += 3
 
-    print(me)
+    #print(me)
+
+    for j in range(0, length):
+        if game[j][0] == "A":    # rock
+            
+            if game[j][1] == "X": # lose
+                total +=0   #lose
+                total +=3   #scissors
+            
+            elif game[j][1] == "Y": # draw
+                total += 3  #draw
+                total += 1  #rock
+
+            elif game[j][1] == "Z": # win
+                total += 6  #win
+                total += 2  #paper
+        
+        elif game[j][0] == "B": # paper
+            
+            if game[j][1] == "X":  # lose
+                total += 0  #lose
+                total += 1  #rock
+            
+            elif game[j][1] == "Y": # draw
+                total += 3  #draw
+                total += 2  #paper
+
+            elif game[j][1] == "Z": # win
+                total += 6  #win
+                total += 3  #scissors
+        
+        elif game[j][0] == "C": # scissors
+            
+            if game[j][1] == "X": # lose
+                total += 0  #lose
+                total += 2  #paper
+
+            elif game[j][1] == "Y": # draw
+                total += 3  #draw
+                total += 3  #scissors
+
+            elif game[j][1] == "Z": # win
+                total += 6  #win
+                total += 1  #rock
+    
+    print(total)
     
 
 readfile()
